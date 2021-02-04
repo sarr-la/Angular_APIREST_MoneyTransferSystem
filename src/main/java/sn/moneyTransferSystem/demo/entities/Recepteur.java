@@ -23,7 +23,7 @@ public class Recepteur  implements Serializable{
 	private String nom;
 	private String prenom;
 	private String telephone;
-	private String cni;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="recepteur", fetch = FetchType.LAZY)
 	 private List<Envoie> envoies = new ArrayList<Envoie>();
@@ -51,12 +51,7 @@ public class Recepteur  implements Serializable{
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	public String getCni() {
-		return cni;
-	}
-	public void setCni(String cni) {
-		this.cni = cni;
-	}
+	
 	public List<Envoie> getEnvoies() {
 		return envoies;
 	}
@@ -67,13 +62,12 @@ public class Recepteur  implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Recepteur(Long id, String nom, String prenom, String telephone, String cni, List<Envoie> envoies) {
+	public Recepteur(Long id, String nom, String prenom, String telephone, List<Envoie> envoies) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
-		this.cni = cni;
 		this.envoies = envoies;
 	}
 	

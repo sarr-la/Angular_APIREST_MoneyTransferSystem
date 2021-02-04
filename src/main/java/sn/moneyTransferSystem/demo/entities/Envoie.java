@@ -18,13 +18,14 @@ public class Envoie implements Serializable{
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String date;
-	private String montant;
-	private String idEmetteur;
-	private String idRecepteur;
+	private int montant;
+	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Emetteur emetteur;
+	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Recepteur recepteur;
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,24 +38,13 @@ public class Envoie implements Serializable{
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getMontant() {
+	public int getMontant() {
 		return montant;
 	}
-	public void setMontant(String montant) {
+	public void setMontant(int montant) {
 		this.montant = montant;
 	}
-	public String getIdEmetteur() {
-		return idEmetteur;
-	}
-	public void setIdEmetteur(String idEmetteur) {
-		this.idEmetteur = idEmetteur;
-	}
-	public String getIdRecepteur() {
-		return idRecepteur;
-	}
-	public void setIdRecepteur(String idRecepteur) {
-		this.idRecepteur = idRecepteur;
-	}
+	
 	public Emetteur getEmetteur() {
 		return emetteur;
 	}
@@ -74,14 +64,12 @@ public class Envoie implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Envoie(Long id, String date, String montant, String idEmetteur, String idRecepteur, Emetteur emetteur,
+	public Envoie(Long id, String date, int montant, Emetteur emetteur,
 			Recepteur recepteur) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.montant = montant;
-		this.idEmetteur = idEmetteur;
-		this.idRecepteur = idRecepteur;
 		this.emetteur = emetteur;
 		this.recepteur = recepteur;
 	}

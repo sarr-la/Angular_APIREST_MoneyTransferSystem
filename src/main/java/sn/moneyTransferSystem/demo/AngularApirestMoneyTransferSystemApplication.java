@@ -22,10 +22,10 @@ public class AngularApirestMoneyTransferSystemApplication implements CommandLine
 	@Override
 	public void run(String... args) throws Exception {
 		
-		emetteurRepository.save(new Emetteur(null, "fall","Fallou","15000 fcfa","773054587"));
-		emetteurRepository.save(new Emetteur(null, "sow","ameth","25000 fcfa","782054519"));
-		emetteurRepository.save(new Emetteur(null, "gueye","mountakha","150000 fcfa","789082587"));
-		emetteurRepository.save(new Emetteur(null, "gadiaga","mafatim","155000 fcfa","773004512"));
+//		emetteurRepository.save(new Emetteur(null, "fall","Fallou","15000 fcfa","773054587"));
+//		emetteurRepository.save(new Emetteur(null, "sow","ameth","25000 fcfa","782054519"));
+//		emetteurRepository.save(new Emetteur(null, "gueye","mountakha","150000 fcfa","789082587"));
+//		emetteurRepository.save(new Emetteur(null, "gadiaga","mafatim","155000 fcfa","773004512"));
 		
 		emetteurRepository.findAll().forEach(e->{
 		System.out.println(((Emetteur) e).getNom());	

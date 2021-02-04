@@ -25,79 +25,97 @@ public class Emetteur implements Serializable {
 	
 	private String prenom;
 	
-	private String montant;
-	
 	private String telephone;
+	
+	private String cni;
+	
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="emetteur" ,fetch = FetchType.LAZY)
 	 private List<Envoie> envoies = new ArrayList<Envoie>();
+
 
 	public Long getId() {
 		return id;
 	}
 
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	public String getNom() {
 		return nom;
 	}
 
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
 
 	public String getPrenom() {
 		return prenom;
 	}
 
+
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
-	public String getMontant() {
-		return montant;
-	}
-
-	public void setMontant(String montant) {
-		this.montant = montant;
-	}
 
 	public String getTelephone() {
 		return telephone;
 	}
 
+
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
+
+	public String getCni() {
+		return cni;
+	}
+
+
+	public void setCni(String cni) {
+		this.cni = cni;
+	}
+
 
 	public List<Envoie> getEnvoies() {
 		return envoies;
 	}
 
+
 	public void setEnvoies(List<Envoie> envoies) {
 		this.envoies = envoies;
 	}
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
+
 	public Emetteur() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Emetteur(Long id, String nom, String prenom, String montant, String telephone) {
+
+	public Emetteur(Long id, String nom, String prenom, String telephone, String cni, List<Envoie> envoies) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.montant = montant;
 		this.telephone = telephone;
-	
+		this.cni = cni;
+		this.envoies = envoies;
 	}
+
+	
 	
 	
 	
